@@ -1,0 +1,16 @@
+[package]
+name = "argon_hash_password"
+version = "0.1.0"
+edition = "2021"
+description = "Functions for creating hashed and salted passwords using argon2"
+homepage = "https://github.com/mark-ruddy/argon_hash_password"
+repository = "https://github.com/mark-ruddy/argon_hash_password"
+license-file = "LICENSE.txt"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.8.5"
+rand_core = { version = "0.6", features = ["std"] }
+argon2 = "0.4"
