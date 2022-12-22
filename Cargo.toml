@@ -2,7 +2,7 @@
 name = "argon_hash_password"
 version = "0.1.0"
 edition = "2021"
-description = "Functions for creating hashed and salted passwords using argon2"
+description = "Functions for creating hashed passwords with salt using argon2"
 homepage = "https://github.com/mark-ruddy/argon_hash_password"
 repository = "https://github.com/mark-ruddy/argon_hash_password"
 license-file = "LICENSE.txt"
