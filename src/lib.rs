@@ -37,10 +37,7 @@ pub fn check_password_matches_hash(
     expected_hash: &str,
     salt: &str,
 ) -> Result<bool, Box<dyn Error>> {
-    let parsed_salt = match SaltString::new(salt) {
-        Ok(parsed_salt) => parsed_salt,
-        Err(e) => return Err(format!("Failed to parse provided salt: {}", e).into()),
-    };
+    let parsed_salt = parse_saltstring(salt)?;
     let hash = match hash_and_verify(password, parsed_salt) {
         Ok(hash) => hash,
         Err(e) => return Err(e),
@@ -60,6 +57,13 @@ pub fn verify_password_len(password: &str) -> bool {
         return false;
     }
     true
+}
+
+pub fn parse_saltstring(salt: &str) -> Result<SaltString, Box<dyn Error>> {
+    match SaltString::new(salt) {
+        Ok(parsed_salt) => Ok(parsed_salt),
+        Err(e) => return Err(format!("Failed to parse provided salt: {}", e).into()),
+    }
 }
 
 /// Generate a secure 128-bit session ID of alphanumeric characters
