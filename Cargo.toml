@@ -1,10 +1,10 @@
 [package]
 name = "argon_hash_password"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
-description = "Functions for creating hashed passwords with salt using argon2"
-homepage = "https://github.com/mark-ruddy/argon_hash_password"
-repository = "https://github.com/mark-ruddy/argon_hash_password"
+description = "Helper functions for common argon2 password hashing requirements"
+homepage = "https://github.com/tirax-lab/argon_hash_password"
+repository = "https://github.com/tirax-lab/argon_hash_password"
 license-file = "LICENSE.txt"
 readme = "README.md"
 
