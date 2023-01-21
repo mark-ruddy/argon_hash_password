@@ -72,7 +72,7 @@ pub fn gen_session_id() -> String {
 }
 
 /// Given a plaintext password and a SaltString, return the hash of the password
-fn hash_and_verify(password: &str, salt: SaltString) -> Result<String, Box<dyn Error>> {
+pub fn hash_and_verify(password: &str, salt: SaltString) -> Result<String, Box<dyn Error>> {
     let argon2 = Argon2::default();
     let hash = match argon2.hash_password(password.as_bytes(), &salt) {
         Ok(hash) => hash.to_string(),
