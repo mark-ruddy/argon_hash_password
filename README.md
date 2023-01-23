@@ -1,5 +1,5 @@
 # Argon Hash Password
-Helper functions for common argon2 password hashing requirements
+Helper library for managing hashed and salted passwords using argon2
 
 ### Create a hashed password with salt
 
